@@ -1,0 +1,9 @@
+# Original single-file bundle backup
+noor-al-hidayah*.html
+*.bak
+
+# OS and temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log

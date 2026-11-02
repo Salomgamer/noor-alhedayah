@@ -1,0 +1,24 @@
+﻿{
+  "name": "نور الهداية — Noor Al-Hidayah",
+  "short_name": "نور الهداية",
+  "description": "المكتبة الإسلامية الرقمية: القرآن الكريم، كتب السنة النبوية، مواقيت الصلاة، اتجاه القبلة، والأذكار",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#06382e",
+  "theme_color": "#06382e",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
