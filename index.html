@@ -18,10 +18,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=14" />
+  <link rel="stylesheet" href="css/style.css?v=15" />
   
   <!-- Application Script -->
-  <script defer src="js/app.js?v=14"></script>
+  <script defer src="js/app.js?v=15"></script>
   <!-- Critical Override: Force Nav Bar to RIGHT side and automatically wipe stale cache -->
   <style>
     /* Fixed right-side sidebar on desktop across all languages */
@@ -106,7 +106,7 @@
   </style>
   <script>
     (function() {
-      var CURRENT_VER = '14.0';
+      var CURRENT_VER = '15.0';
       var lastVer = localStorage.getItem('app_applied_ver');
       if (lastVer !== CURRENT_VER) {
         localStorage.setItem('app_applied_ver', CURRENT_VER);
@@ -131,5 +131,65 @@
 </head>
 <body>
   <div id="root"></div>
+
+  <!-- Interactive Pointer Hover Engine -->
+  <script>
+    (function() {
+      if (typeof window === 'undefined') return;
+      var glow = document.createElement('div');
+      glow.className = 'pointer-glow';
+      glow.setAttribute('aria-hidden', 'true');
+      
+      function initGlow() {
+        if (document.body && !document.body.contains(glow)) {
+          document.body.appendChild(glow);
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGlow);
+      } else {
+        initGlow();
+      }
+
+      var rafId = null;
+      var mouseX = -999, mouseY = -999;
+      var isOverInteractive = false;
+
+      window.addEventListener('pointermove', function(e) {
+        if (e.pointerType === 'touch') return;
+        document.body.classList.add('has-pointer');
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        var target = e.target.closest('.card, .pcard, a.card, .side-btn, .btn, .tile, .hero');
+        if (target) {
+          isOverInteractive = true;
+          var rect = target.getBoundingClientRect();
+          target.style.setProperty('--pointer-x', (e.clientX - rect.left) + 'px');
+          target.style.setProperty('--pointer-y', (e.clientY - rect.top) + 'px');
+        } else {
+          isOverInteractive = false;
+        }
+
+        if (!rafId) {
+          rafId = requestAnimationFrame(function() {
+            glow.style.left = mouseX + 'px';
+            glow.style.top = mouseY + 'px';
+            if (isOverInteractive) {
+              document.body.classList.add('pointer-hovering');
+            } else {
+              document.body.classList.remove('pointer-hovering');
+            }
+            rafId = null;
+          });
+        }
+      }, { passive: true });
+
+      window.addEventListener('pointerleave', function() {
+        document.body.classList.remove('has-pointer');
+      });
+    })();
+  </script>
+
 </body>
 </html>
