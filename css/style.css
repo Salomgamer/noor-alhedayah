@@ -110,34 +110,40 @@
 
 
 /* ==========================================================================
-   Fixed Sidebar / Side Control Tab (Locked to LEFT of the screen)
+   Fixed Sidebar / Side Control Tab (ALWAYS ON THE RIGHT SIDE IN ARABIC & ENGLISH)
    ========================================================================== */
+html[dir="rtl"] .side,
+html[dir="ltr"] .side,
 .side {
   position: fixed !important;
   top: 0 !important;
   bottom: 0 !important;
-  left: 0 !important;
-  right: auto !important;
+  right: 0 !important;
+  left: auto !important;
   inset-inline-start: unset !important;
-  inset-inline-end: unset !important;
-  border-right: 3px solid var(--gold) !important;
-  border-left: none !important;
+  inset-inline-end: 0 !important;
+  border-left: 3px solid var(--gold) !important;
+  border-right: none !important;
   border-inline-end: none !important;
-  border-inline-start: none !important;
+  border-inline-start: 3px solid var(--gold) !important;
   direction: rtl !important;
 }
 
+html[dir="rtl"] .pg,
+html[dir="ltr"] .pg,
 .pg {
-  margin-left: var(--sbw) !important;
-  margin-right: 0 !important;
+  margin-right: var(--sbw) !important;
+  margin-left: 0 !important;
   margin-inline-start: unset !important;
   margin-inline-end: unset !important;
   transition: margin .25s ease;
 }
 
+html[dir="rtl"] .dock,
+html[dir="ltr"] .dock,
 .dock {
-  left: var(--sbw) !important;
-  right: 0 !important;
+  right: var(--sbw) !important;
+  left: 0 !important;
   inset-inline-start: unset !important;
   inset-inline-end: unset !important;
 }
@@ -148,8 +154,8 @@
 }
 
 .side .side-btn.active:before {
-  left: -1px !important;
-  right: auto !important;
+  right: -1px !important;
+  left: auto !important;
   inset-inline-start: unset !important;
 }
 
@@ -160,13 +166,17 @@
   .side {
     display: none !important;
   }
+  html[dir="rtl"] .pg,
+  html[dir="ltr"] .pg,
   .pg {
-    margin-left: 0 !important;
     margin-right: 0 !important;
+    margin-left: 0 !important;
   }
+  html[dir="rtl"] .dock,
+  html[dir="ltr"] .dock,
   .dock {
-    left: 0 !important;
     right: 0 !important;
+    left: 0 !important;
   }
 }
 
