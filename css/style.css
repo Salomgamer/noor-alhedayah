@@ -175,10 +175,10 @@ aside.side.expanded {
 }
 
 /* ==========================================================================
-   MIDDLE LOCK & REFINED COMPACT SIZING (SMALLER, SLEEKER)
+   MIDDLE LOCK & ENHANCED BIGGER TYPOGRAPHY
    ========================================================================== */
 
-/* Compact Sidebar Buttons */
+/* Enhanced Sidebar Buttons (Bigger & Clearer) */
 .side .side-btn,
 html[dir="rtl"] .side .side-btn,
 html[dir="ltr"] .side .side-btn {
@@ -186,12 +186,13 @@ html[dir="ltr"] .side .side-btn {
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  min-height: 36px !important;
-  padding: 5px 10px !important;
-  font-size: 0.88rem !important;
-  gap: 7px !important;
+  min-height: 42px !important;
+  padding: 6px 12px !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  gap: 8px !important;
   width: calc(100% - 14px) !important;
-  margin: 2px 7px !important;
+  margin: 3px 7px !important;
 }
 
 .side .side-btn .bi,
@@ -200,7 +201,7 @@ html[dir="ltr"] .side .side-btn .bi {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 0.95rem !important;
+  font-size: 1.15rem !important;
 }
 
 .side .side-btn .bt,
@@ -209,6 +210,7 @@ html[dir="ltr"] .side .side-btn .bt {
   display: inline-block !important;
   text-align: center !important;
   white-space: nowrap !important;
+  font-size: 1.05rem !important;
 }
 
 .side .logo2,
@@ -218,10 +220,14 @@ html[dir="ltr"] .side .logo2 {
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  font-size: 1.1rem !important;
-  gap: 7px !important;
-  padding: 8px 12px !important;
+  font-size: 1.3rem !important;
+  gap: 8px !important;
+  padding: 10px 14px !important;
   white-space: nowrap !important;
+}
+
+.side .logo2 .crs {
+  font-size: 1.45rem !important;
 }
 
 .side .fold,
@@ -231,8 +237,8 @@ html[dir="ltr"] .side .fold {
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  min-height: 32px !important;
-  font-size: 0.84rem !important;
+  min-height: 36px !important;
+  font-size: 0.95rem !important;
   white-space: nowrap !important;
 }
 
@@ -240,99 +246,99 @@ html[dir="ltr"] .side .fold {
 html[dir="rtl"] .side .sep,
 html[dir="ltr"] .side .sep {
   text-align: center !important;
-  font-size: 0.72rem !important;
-  padding: 8px 6px 2px !important;
+  font-size: 0.82rem !important;
+  padding: 10px 8px 3px !important;
 }
 
-/* Compact Headings & Text */
+/* Bigger Headings & Section Titles */
 main h1, .pg h1,
 html[dir="rtl"] main h1, html[dir="ltr"] main h1 {
   text-align: center !important;
-  font-size: 1.55rem !important;
-  margin: 0.35em 0 !important;
+  font-size: 2.1rem !important;
+  margin: 0.4em 0 !important;
 }
 
 main h2, .pg h2,
 html[dir="rtl"] main h2, html[dir="ltr"] main h2 {
   text-align: center !important;
-  font-size: 1.2rem !important;
+  font-size: 1.55rem !important;
 }
 
 main h3, .pg h3,
 html[dir="rtl"] main h3, html[dir="ltr"] main h3 {
   text-align: center !important;
-  font-size: 1.02rem !important;
+  font-size: 1.25rem !important;
 }
 
-/* Compact Cards & Grid */
+/* Bigger Cards Typography */
 .card, .pcard,
 html[dir="rtl"] .card, html[dir="rtl"] .pcard,
 html[dir="ltr"] .card, html[dir="ltr"] .pcard {
   text-align: center !important;
-  padding: 14px 10px !important;
-  border-radius: 12px !important;
+  padding: 18px 14px !important;
+  border-radius: 14px !important;
 }
 
 .card h2, .pcard h2,
 html[dir="rtl"] .card h2, html[dir="ltr"] .card h2 {
-  font-size: 1.05rem !important;
-  margin: 2px 0 !important;
+  font-size: 1.25rem !important;
+  margin: 4px 0 !important;
   font-weight: 700 !important;
 }
 
 .card h3, .pcard h3,
 html[dir="rtl"] .card h3, html[dir="ltr"] .card h3 {
-  font-size: 0.95rem !important;
-  margin: 2px 0 !important;
+  font-size: 1.1rem !important;
+  margin: 3px 0 !important;
 }
 
 .card .mut, .pcard .mut,
 html[dir="rtl"] .card .mut, html[dir="ltr"] .card .mut {
-  font-size: 0.78rem !important;
+  font-size: 0.92rem !important;
 }
 
 .card .big, .pcard .big {
-  font-size: 1.5rem !important;
+  font-size: 1.95rem !important;
 }
 
 .pcard.sm .big .svg-icon,
 .card .big .svg-icon {
-  width: 1.75rem !important;
-  height: 1.75rem !important;
+  width: 2.15rem !important;
+  height: 2.15rem !important;
 }
 
-/* Compact Hero Header */
+/* Bigger Hero Header */
 .hero,
 html[dir="rtl"] .hero,
 html[dir="ltr"] .hero {
   text-align: center !important;
-  padding: 16px 14px !important;
-  border-radius: 14px !important;
+  padding: 22px 18px !important;
+  border-radius: 16px !important;
 }
 
 .hero h1,
 html[dir="rtl"] .hero h1,
 html[dir="ltr"] .hero h1 {
-  font-size: 2.1rem !important;
-  margin-bottom: 4px !important;
+  font-size: 2.8rem !important;
+  margin-bottom: 6px !important;
 }
 
 .hero .ayah,
 html[dir="rtl"] .hero .ayah,
 html[dir="ltr"] .hero .ayah {
-  font-size: 1.15rem !important;
-  line-height: 1.9 !important;
+  font-size: 1.45rem !important;
+  line-height: 2.1 !important;
 }
 
 .hero p,
 html[dir="rtl"] .hero p,
 html[dir="ltr"] .hero p {
-  font-size: 0.88rem !important;
-  line-height: 1.55 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
 }
 
 /* ==========================================================================
-   ARABIC MODE (dir="rtl")
+   ARABIC MODE (dir="rtl") - BIGGER BODY & TEXT
    ========================================================================== */
 html[dir="rtl"],
 html[lang="ar"] {
@@ -346,13 +352,14 @@ html[dir="rtl"] select,
 html[dir="rtl"] input,
 html[dir="rtl"] textarea {
   font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
-  font-size: 0.94rem !important;
-  line-height: 1.75;
+  font-size: 1.08rem !important;
+  line-height: 1.95;
 }
 
 html[dir="rtl"] .side .side-btn {
   direction: rtl !important;
   font-family: 'Amiri', 'Noto Naskh Arabic', serif !important;
+  font-size: 1.05rem !important;
   font-weight: 700 !important;
 }
 
@@ -380,7 +387,7 @@ html[dir="rtl"] .bnav {
 }
 
 /* ==========================================================================
-   ENGLISH MODE (dir="ltr")
+   ENGLISH MODE (dir="ltr") - BIGGER BODY & TEXT
    ========================================================================== */
 html[dir="ltr"],
 html[lang="en"] {
@@ -394,13 +401,14 @@ html[dir="ltr"] select,
 html[dir="ltr"] input,
 html[dir="ltr"] textarea {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  font-size: 0.92rem !important;
-  line-height: 1.55;
+  font-size: 1.02rem !important;
+  line-height: 1.65;
 }
 
 html[dir="ltr"] .side .side-btn {
   direction: ltr !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 1.02rem !important;
   font-weight: 600 !important;
 }
 
@@ -428,7 +436,7 @@ html[dir="ltr"] .bnav {
 }
 
 /* ==========================================================================
-   AUTHENTIC QURANIC TYPOGRAPHY (Classical Naskh, Compact & Legible)
+   AUTHENTIC QURANIC TYPOGRAPHY (Classical Naskh, BIGGER & MAJESTIC)
    ========================================================================== */
 .quran,
 .mushaf,
@@ -442,13 +450,44 @@ html[dir="ltr"] .bnav {
 .quran-text {
   font-family: 'Amiri Quran', 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
   font-feature-settings: "cv01" on, "cv02" on;
-  font-size: 1.25rem !important;
-  line-height: 2.0 !important;
+  font-size: 1.55rem !important;
+  line-height: 2.3 !important;
   direction: rtl !important;
   text-align: center !important;
   letter-spacing: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS (max-width: 899px)
+   ========================================================================== */
+@media (max-width: 899px) {
+  .shell, .shell.col {
+    --sbw: 0px !important;
+  }
+  html body .side,
+  aside.side {
+    display: none !important;
+  }
+  html body .pg,
+  html[dir="rtl"] body .pg,
+  html[dir="ltr"] body .pg,
+  .pg {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  html body .dock,
+  html[dir="rtl"] body .dock,
+  html[dir="ltr"] body .dock,
+  .dock,
+  html body .abar,
+  html[dir="rtl"] body .abar,
+  html[dir="ltr"] body .abar,
+  .abar {
+    right: 0 !important;
+    left: 0 !important;
+  }
 }
 
 /* ==========================================================================

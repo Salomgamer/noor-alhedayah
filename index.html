@@ -18,10 +18,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=18" />
+  <link rel="stylesheet" href="css/style.css?v=19" />
   
   <!-- Application Script -->
-  <script defer src="js/app.js?v=18"></script>
+  <script defer src="js/app.js?v=19"></script>
   <!-- Critical Override: Force Nav Bar to RIGHT side and automatically wipe stale cache -->
   <style>
     /* Desktop: Sidebar starts COLLAPSED (64px) and OPENS ON HOVER (236px) */
@@ -65,30 +65,32 @@
       z-index: 1000 !important;
     }
 
-    /* REFINED COMPACT & MIDDLE-LOCKED SIZING */
+    /* BIGGER & MIDDLE-LOCKED SIZING */
     .side .side-btn,
     html body .side .side-btn {
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       text-align: center !important;
-      min-height: 36px !important;
-      padding: 5px 10px !important;
-      font-size: 0.88rem !important;
-      gap: 7px !important;
+      min-height: 42px !important;
+      padding: 6px 12px !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      gap: 8px !important;
       width: calc(100% - 14px) !important;
-      margin: 2px 7px !important;
+      margin: 3px 7px !important;
     }
     .side .side-btn .bi {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
-      font-size: 0.95rem !important;
+      font-size: 1.15rem !important;
     }
     .side .side-btn .bt {
       display: inline-block !important;
       text-align: center !important;
       white-space: nowrap !important;
+      font-size: 1.05rem !important;
     }
     .side .logo2,
     .side .fold,
@@ -105,7 +107,7 @@
     }
     .card, .pcard {
       text-align: center !important;
-      padding: 14px 10px !important;
+      padding: 18px 14px !important;
     }
     .card h1, .card h2, .card h3, .card h4, .card p,
     .pcard h1, .pcard h2, .pcard h3, .pcard h4, .pcard p {
@@ -120,8 +122,8 @@
       direction: rtl !important;
       text-align: center !important;
       font-family: 'Amiri Quran', 'Scheherazade New', 'Amiri', serif !important;
-      font-size: 1.25rem !important;
-      line-height: 2.0 !important;
+      font-size: 1.55rem !important;
+      line-height: 2.3 !important;
     }
 
     @media (max-width: 899px) {
@@ -129,7 +131,7 @@
       html body .pg { margin-right: 0 !important; margin-left: 0 !important; }
       html body .dock, html body .abar { right: 0 !important; left: 0 !important; }
     }
-  
+
     /* Compact Language Changer */
     .langbtn, .btn.langbtn, .side .langbtn, .mtop .langbtn {
       font-size: 0.74rem !important;
@@ -152,7 +154,7 @@
   </style>
   <script>
     (function() {
-      var CURRENT_VER = '18.0';
+      var CURRENT_VER = '19.0';
       localStorage.setItem('sb', 'true');
       var lastVer = localStorage.getItem('app_applied_ver');
       if (lastVer !== CURRENT_VER) {
