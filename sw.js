@@ -1,16 +1,16 @@
-// Service Worker for Noor Al-Hidayah (نور الهداية) PWA - v5
-const CACHE_NAME = 'noor-alhidayah-v5';
+// Service Worker for Noor Al-Hidayah (نور الهداية) PWA - v6
+const CACHE_NAME = 'noor-alhidayah-v6';
 
 const CORE_ASSETS = [
   './',
   './index.html',
-  './css/style.css',
-  './js/app.js',
+  './css/style.css?v=6',
+  './js/app.js?v=6',
   './manifest.webmanifest',
   './favicon.svg'
 ];
 
-// Install: pre-cache core assets and activate immediately
+// Install: pre-cache core assets and force immediate activation
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
@@ -20,7 +20,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate: clean up old caches and claim all clients
+// Activate: delete ALL old caches immediately and claim clients
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
@@ -31,7 +31,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch: network-first for HTML, stale-while-revalidate for JS/CSS/assets
+// Fetch handler
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   if (req.method !== 'GET') return;
@@ -54,7 +54,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 2. Same-origin assets (JS, CSS, SVGs): Stale-While-Revalidate with automatic cache refresh
+  // 2. Same-origin assets: Stale-While-Revalidate with immediate background update
   if (url.origin === self.location.origin) {
     event.respondWith(
       caches.match(req).then((cached) => {
@@ -74,7 +74,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 3. External assets (fonts, APIs): Network with cache fallback
+  // 3. External assets (fonts, etc.)
   event.respondWith(
     caches.match(req).then((cached) => {
       return cached || fetch(req).then((response) => {
