@@ -110,13 +110,14 @@
 
 
 /* ==========================================================================
-   Fixed Sidebar & Bars (PURE PHYSICAL PROPERTIES - 100% RIGHT SIDE)
+   Dual-Language Bidirectional Layout (Arabic RTL & English LTR)
    ========================================================================== */
-html .side,
-html[dir="rtl"] .side,
-html[dir="ltr"] .side,
-body .side,
-.side {
+
+/* 1. Desktop Sidebar: Hard-locked to the RIGHT side on desktop in all languages */
+html body .side,
+html[dir="rtl"] body .side,
+html[dir="ltr"] body .side,
+aside.side {
   position: fixed !important;
   inset: auto !important;
   top: 0 !important;
@@ -127,100 +128,236 @@ body .side,
   border-right: none !important;
   width: var(--sbw) !important;
   background: var(--em2) !important;
-  direction: rtl !important;
   z-index: 40 !important;
+  transform: none !important;
 }
 
-html .pg,
-html[dir="rtl"] .pg,
-html[dir="ltr"] .pg,
-body .pg,
+/* 2. Main Page Desktop Margins: Content clears the right sidebar */
+html body .pg,
+html[dir="rtl"] body .pg,
+html[dir="ltr"] body .pg,
 .pg {
   margin-right: var(--sbw) !important;
   margin-left: 0 !important;
   transition: margin .25s ease !important;
 }
 
-html .dock,
-html[dir="rtl"] .dock,
-html[dir="ltr"] .dock,
-body .dock,
+/* 3. Docked Floating Bars: Audio player & prayer bars leave space for right sidebar */
+html body .dock,
+html[dir="rtl"] body .dock,
+html[dir="ltr"] body .dock,
 .dock,
-html .abar,
-html[dir="rtl"] .abar,
-html[dir="ltr"] .abar,
-body .abar,
+html body .abar,
+html[dir="rtl"] body .abar,
+html[dir="ltr"] body .abar,
 .abar {
   right: var(--sbw) !important;
   left: 0 !important;
 }
 
-.side .side-btn {
+/* ==========================================================================
+   ARABIC MODE (dir="rtl")
+   ========================================================================== */
+html[dir="rtl"],
+html[lang="ar"] {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
+}
+
+html[dir="rtl"] body,
+html[dir="rtl"] button,
+html[dir="rtl"] select,
+html[dir="rtl"] input,
+html[dir="rtl"] textarea {
+  font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
+  line-height: 1.95;
+  text-align: right;
+}
+
+/* Arabic Sidebar */
+html[dir="rtl"] .side {
   direction: rtl !important;
   text-align: right !important;
 }
 
-.side .side-btn.active:before {
+html[dir="rtl"] .side .logo2 {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] .side .side-btn {
+  direction: rtl !important;
+  text-align: right !important;
+  justify-content: flex-start !important;
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+}
+
+html[dir="rtl"] .side .side-btn.active:before {
   right: -1px !important;
   left: auto !important;
 }
 
+/* Arabic Page Content */
+html[dir="rtl"] .pg {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] .logo,
+html[dir="rtl"] .logo2,
+html[dir="rtl"] .hero h1 {
+  font-family: 'Amiri', 'Traditional Arabic', serif !important;
+  font-weight: 700;
+  text-align: right;
+}
+
+html[dir="rtl"] .card,
+html[dir="rtl"] .hero p {
+  text-align: right;
+}
+
+html[dir="rtl"] .mtop {
+  direction: rtl !important;
+}
+
+html[dir="rtl"] .bnav {
+  direction: rtl !important;
+}
+
+/* ==========================================================================
+   ENGLISH MODE (dir="ltr")
+   ========================================================================== */
+html[dir="ltr"],
+html[lang="en"] {
+  direction: ltr;
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+html[dir="ltr"] body,
+html[dir="ltr"] button,
+html[dir="ltr"] select,
+html[dir="ltr"] input,
+html[dir="ltr"] textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* English Sidebar (Permanently on the Right edge, but internal flow is LTR) */
+html[dir="ltr"] .side {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html[dir="ltr"] .side .logo2 {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html[dir="ltr"] .side .side-btn {
+  direction: ltr !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+}
+
+html[dir="ltr"] .side .side-btn.active:before {
+  right: -1px !important;
+  left: auto !important;
+}
+
+/* English Page Content */
+html[dir="ltr"] .pg {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] h3,
+html[dir="ltr"] h4,
+html[dir="ltr"] .logo,
+html[dir="ltr"] .logo2,
+html[dir="ltr"] .hero h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-weight: 700;
+  text-align: left;
+}
+
+html[dir="ltr"] .card,
+html[dir="ltr"] .hero p,
+html[dir="ltr"] .hero .mut {
+  text-align: left;
+}
+
+html[dir="ltr"] .mtop {
+  direction: ltr !important;
+}
+
+html[dir="ltr"] .bnav {
+  direction: ltr !important;
+}
+
+/* ==========================================================================
+   AUTHENTIC QURANIC TYPOGRAPHY (Classical Uthmanic & Naskh Calligraphy)
+   ========================================================================== */
+.quran,
+.mushaf,
+.ayah,
+.bsm,
+.dtxt,
+.hadith,
+[data-quran],
+.ayah-txt,
+.surah-ayah,
+.quran-text {
+  font-family: 'Amiri Quran', 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
+  font-feature-settings: "cv01" on, "cv02" on;
+  line-height: 2.2 !important;
+  direction: rtl !important;
+  text-align: center !important;
+  letter-spacing: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS (max-width: 899px)
+   ========================================================================== */
 @media (max-width: 899px) {
   .shell, .shell.col {
     --sbw: 0px !important;
   }
-  .side {
+  html body .side,
+  aside.side {
     display: none !important;
   }
-  html .pg,
-  html[dir="rtl"] .pg,
-  html[dir="ltr"] .pg,
-  body .pg,
+  html body .pg,
+  html[dir="rtl"] body .pg,
+  html[dir="ltr"] body .pg,
   .pg {
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
-  html .dock,
-  html[dir="rtl"] .dock,
-  html[dir="ltr"] .dock,
-  body .dock,
+  html body .dock,
+  html[dir="rtl"] body .dock,
+  html[dir="ltr"] body .dock,
   .dock,
-  html .abar,
-  html[dir="rtl"] .abar,
-  html[dir="ltr"] .abar,
-  body .abar,
+  html body .abar,
+  html[dir="rtl"] body .abar,
+  html[dir="ltr"] body .abar,
   .abar {
     right: 0 !important;
     left: 0 !important;
   }
-}
-
-/* ==========================================================================
-   Authentic Quranic & Islamic Typography (Classical Naskh Calligraphy)
-   ========================================================================== */
-body, button, select, input, textarea {
-  font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
-  font-size: 1.05rem;
-  line-height: 1.95;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, .logo, .logo2, .hero h1 {
-  font-family: 'Amiri', 'Traditional Arabic', serif !important;
-  font-weight: 700;
-  letter-spacing: 0;
-}
-
-/* Quranic Verses, Surahs, Mushaf & Basmalah */
-.quran, .mushaf, .ayah, .bsm, .dtxt, .hadith {
-  font-family: 'Amiri Quran', 'Amiri', 'Traditional Arabic', 'Scheherazade New', serif !important;
-  font-feature-settings: "cv01" on, "cv02" on;
-  line-height: 2.2 !important;
-}
-
-.side-btn {
-  font-family: 'Amiri', 'Noto Naskh Arabic', serif !important;
-  font-size: 1.05rem !important;
-  font-weight: 700 !important;
 }
