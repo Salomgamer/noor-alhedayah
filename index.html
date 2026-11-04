@@ -18,10 +18,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=15" />
+  <link rel="stylesheet" href="css/style.css?v=16" />
   
   <!-- Application Script -->
-  <script defer src="js/app.js?v=15"></script>
+  <script defer src="js/app.js?v=16"></script>
   <!-- Critical Override: Force Nav Bar to RIGHT side and automatically wipe stale cache -->
   <style>
     /* Fixed right-side sidebar on desktop across all languages */
@@ -49,19 +49,23 @@
       left: 0 !important;
     }
 
-    /* MIDDLE LOCK: Centered fonts across buttons, headers, and cards */
+    /* REFINED COMPACT & MIDDLE-LOCKED SIZING */
     .side .side-btn,
     html body .side .side-btn {
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       text-align: center !important;
-      gap: 8px !important;
+      min-height: 36px !important;
+      padding: 5px 10px !important;
+      font-size: 0.88rem !important;
+      gap: 7px !important;
     }
     .side .side-btn .bi {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
+      font-size: 0.95rem !important;
     }
     .side .side-btn .bt {
       display: inline-block !important;
@@ -81,6 +85,7 @@
     }
     .card, .pcard {
       text-align: center !important;
+      padding: 14px 10px !important;
     }
     .card h1, .card h2, .card h3, .card h4, .card p,
     .pcard h1, .pcard h2, .pcard h3, .pcard h4, .pcard p {
@@ -95,7 +100,8 @@
       direction: rtl !important;
       text-align: center !important;
       font-family: 'Amiri Quran', 'Scheherazade New', 'Amiri', serif !important;
-      line-height: 2.2 !important;
+      font-size: 1.25rem !important;
+      line-height: 2.0 !important;
     }
 
     @media (max-width: 899px) {
@@ -106,7 +112,7 @@
   </style>
   <script>
     (function() {
-      var CURRENT_VER = '15.0';
+      var CURRENT_VER = '16.0';
       var lastVer = localStorage.getItem('app_applied_ver');
       if (lastVer !== CURRENT_VER) {
         localStorage.setItem('app_applied_ver', CURRENT_VER);

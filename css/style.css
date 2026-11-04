@@ -113,7 +113,7 @@
    Dual-Language Bidirectional Layout (Arabic RTL & English LTR)
    ========================================================================== */
 
-/* 1. Desktop Sidebar: Hard-locked to the RIGHT side on desktop in all languages */
+/* 1. Desktop Sidebar: Hard-locked to the RIGHT side on desktop */
 html body .side,
 html[dir="rtl"] body .side,
 html[dir="ltr"] body .side,
@@ -132,7 +132,7 @@ aside.side {
   transform: none !important;
 }
 
-/* 2. Main Page Desktop Margins: Content clears the right sidebar */
+/* 2. Main Page Desktop Margins: Clears right sidebar */
 html body .pg,
 html[dir="rtl"] body .pg,
 html[dir="ltr"] body .pg,
@@ -142,7 +142,7 @@ html[dir="ltr"] body .pg,
   transition: margin .25s ease !important;
 }
 
-/* 3. Docked Floating Bars: Audio player & prayer bars leave space for right sidebar */
+/* 3. Docked Floating Bars */
 html body .dock,
 html[dir="rtl"] body .dock,
 html[dir="ltr"] body .dock,
@@ -156,10 +156,10 @@ html[dir="ltr"] body .abar,
 }
 
 /* ==========================================================================
-   MIDDLE LOCK (Centered Fonts & Content Across Arabic & English)
+   MIDDLE LOCK & REFINED COMPACT SIZING (SMALLER, SLEEKER)
    ========================================================================== */
 
-/* Sidebar Buttons & Items: Middle-Locked (Centered) */
+/* Compact Sidebar Buttons */
 .side .side-btn,
 html[dir="rtl"] .side .side-btn,
 html[dir="ltr"] .side .side-btn {
@@ -167,7 +167,10 @@ html[dir="ltr"] .side .side-btn {
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  gap: 8px !important;
+  min-height: 36px !important;
+  padding: 5px 10px !important;
+  font-size: 0.88rem !important;
+  gap: 7px !important;
 }
 
 .side .side-btn .bi,
@@ -176,7 +179,7 @@ html[dir="ltr"] .side .side-btn .bi {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  text-align: center !important;
+  font-size: 0.95rem !important;
 }
 
 .side .side-btn .bt,
@@ -186,7 +189,6 @@ html[dir="ltr"] .side .side-btn .bt {
   text-align: center !important;
 }
 
-/* Sidebar Logo & Controls: Middle-Locked (Centered) */
 .side .logo2,
 html[dir="rtl"] .side .logo2,
 html[dir="ltr"] .side .logo2 {
@@ -194,7 +196,9 @@ html[dir="ltr"] .side .logo2 {
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
-  gap: 8px !important;
+  font-size: 1.1rem !important;
+  gap: 7px !important;
+  padding: 8px 12px !important;
 }
 
 .side .fold,
@@ -204,48 +208,103 @@ html[dir="ltr"] .side .fold {
   align-items: center !important;
   justify-content: center !important;
   text-align: center !important;
+  min-height: 32px !important;
+  font-size: 0.84rem !important;
 }
 
 .side .sep,
 html[dir="rtl"] .side .sep,
 html[dir="ltr"] .side .sep {
   text-align: center !important;
+  font-size: 0.72rem !important;
+  padding: 8px 6px 2px !important;
 }
 
-/* Page Headings, Cards & Hero: Middle-Locked (Centered) */
-main h1, main h2, main h3, main h4,
-.pg h1, .pg h2, .pg h3, .pg h4,
-html[dir="rtl"] main h1, html[dir="rtl"] main h2,
-html[dir="ltr"] main h1, html[dir="ltr"] main h2 {
+/* Compact Headings & Text */
+main h1, .pg h1,
+html[dir="rtl"] main h1, html[dir="ltr"] main h1 {
   text-align: center !important;
+  font-size: 1.55rem !important;
+  margin: 0.35em 0 !important;
 }
 
+main h2, .pg h2,
+html[dir="rtl"] main h2, html[dir="ltr"] main h2 {
+  text-align: center !important;
+  font-size: 1.2rem !important;
+}
+
+main h3, .pg h3,
+html[dir="rtl"] main h3, html[dir="ltr"] main h3 {
+  text-align: center !important;
+  font-size: 1.02rem !important;
+}
+
+/* Compact Cards & Grid */
 .card, .pcard,
 html[dir="rtl"] .card, html[dir="rtl"] .pcard,
 html[dir="ltr"] .card, html[dir="ltr"] .pcard {
   text-align: center !important;
+  padding: 14px 10px !important;
+  border-radius: 12px !important;
 }
 
-.card h1, .card h2, .card h3, .card h4, .card p,
-.pcard h1, .pcard h2, .pcard h3, .pcard h4, .pcard p,
-html[dir="rtl"] .card p, html[dir="ltr"] .card p,
-html[dir="rtl"] .card h2, html[dir="ltr"] .card h2,
+.card h2, .pcard h2,
+html[dir="rtl"] .card h2, html[dir="ltr"] .card h2 {
+  font-size: 1.05rem !important;
+  margin: 2px 0 !important;
+  font-weight: 700 !important;
+}
+
+.card h3, .pcard h3,
 html[dir="rtl"] .card h3, html[dir="ltr"] .card h3 {
-  text-align: center !important;
+  font-size: 0.95rem !important;
+  margin: 2px 0 !important;
 }
 
+.card .mut, .pcard .mut,
+html[dir="rtl"] .card .mut, html[dir="ltr"] .card .mut {
+  font-size: 0.78rem !important;
+}
+
+.card .big, .pcard .big {
+  font-size: 1.5rem !important;
+}
+
+.pcard.sm .big .svg-icon,
+.card .big .svg-icon {
+  width: 1.75rem !important;
+  height: 1.75rem !important;
+}
+
+/* Compact Hero Header */
 .hero,
-.hero h1,
-.hero h2,
-.hero p,
-.hero .mut,
 html[dir="rtl"] .hero,
-html[dir="rtl"] .hero h1,
-html[dir="rtl"] .hero p,
-html[dir="ltr"] .hero,
-html[dir="ltr"] .hero h1,
-html[dir="ltr"] .hero p {
+html[dir="ltr"] .hero {
   text-align: center !important;
+  padding: 16px 14px !important;
+  border-radius: 14px !important;
+}
+
+.hero h1,
+html[dir="rtl"] .hero h1,
+html[dir="ltr"] .hero h1 {
+  font-size: 2.1rem !important;
+  margin-bottom: 4px !important;
+}
+
+.hero .ayah,
+html[dir="rtl"] .hero .ayah,
+html[dir="ltr"] .hero .ayah {
+  font-size: 1.15rem !important;
+  line-height: 1.9 !important;
+}
+
+.hero p,
+html[dir="rtl"] .hero p,
+html[dir="ltr"] .hero p {
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
 }
 
 /* ==========================================================================
@@ -263,13 +322,13 @@ html[dir="rtl"] select,
 html[dir="rtl"] input,
 html[dir="rtl"] textarea {
   font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
-  line-height: 1.95;
+  font-size: 0.94rem !important;
+  line-height: 1.75;
 }
 
 html[dir="rtl"] .side .side-btn {
   direction: rtl !important;
   font-family: 'Amiri', 'Noto Naskh Arabic', serif !important;
-  font-size: 1.05rem !important;
   font-weight: 700 !important;
 }
 
@@ -283,8 +342,7 @@ html[dir="rtl"] h2,
 html[dir="rtl"] h3,
 html[dir="rtl"] h4,
 html[dir="rtl"] .logo,
-html[dir="rtl"] .logo2,
-html[dir="rtl"] .hero h1 {
+html[dir="rtl"] .logo2 {
   font-family: 'Amiri', 'Traditional Arabic', serif !important;
   font-weight: 700;
 }
@@ -312,13 +370,13 @@ html[dir="ltr"] select,
 html[dir="ltr"] input,
 html[dir="ltr"] textarea {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  line-height: 1.6;
+  font-size: 0.92rem !important;
+  line-height: 1.55;
 }
 
 html[dir="ltr"] .side .side-btn {
   direction: ltr !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 0.95rem !important;
   font-weight: 600 !important;
 }
 
@@ -332,8 +390,7 @@ html[dir="ltr"] h2,
 html[dir="ltr"] h3,
 html[dir="ltr"] h4,
 html[dir="ltr"] .logo,
-html[dir="ltr"] .logo2,
-html[dir="ltr"] .hero h1 {
+html[dir="ltr"] .logo2 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   font-weight: 700;
 }
@@ -347,7 +404,7 @@ html[dir="ltr"] .bnav {
 }
 
 /* ==========================================================================
-   AUTHENTIC QURANIC TYPOGRAPHY (Classical Uthmanic & Naskh Calligraphy)
+   AUTHENTIC QURANIC TYPOGRAPHY (Classical Naskh, Compact & Legible)
    ========================================================================== */
 .quran,
 .mushaf,
@@ -361,12 +418,178 @@ html[dir="ltr"] .bnav {
 .quran-text {
   font-family: 'Amiri Quran', 'Scheherazade New', 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
   font-feature-settings: "cv01" on, "cv02" on;
-  line-height: 2.2 !important;
+  font-size: 1.25rem !important;
+  line-height: 2.0 !important;
   direction: rtl !important;
   text-align: center !important;
   letter-spacing: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   REFINED, COMPACT POINTER HOVER ENGINE (SMALLER & SUBTLER)
+   ========================================================================== */
+
+/* 1. Subtle, Compact Pointer Glow Aura (90px - 130px) */
+.pointer-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(200, 162, 74, 0.12) 0%, rgba(200, 162, 74, 0.03) 50%, transparent 70%);
+  transition: opacity 0.25s ease, width 0.25s ease, height 0.25s ease;
+  mix-blend-mode: screen;
+}
+
+body.has-pointer .pointer-glow {
+  opacity: 1;
+}
+
+body.pointer-hovering .pointer-glow {
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle, rgba(200, 162, 74, 0.16) 0%, rgba(200, 162, 74, 0.05) 50%, transparent 72%);
+}
+
+@media (hover: none) or (pointer: coarse) {
+  .pointer-glow {
+    display: none !important;
+  }
+}
+
+/* 2. Compact Spotlight inside Cards & Buttons */
+.card,
+.pcard,
+a.card,
+.side .side-btn,
+.btn,
+.today .tile,
+.hero {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background 0.22s ease !important;
+}
+
+.card::after,
+.pcard::after,
+a.card::after,
+.side .side-btn::after,
+.today .tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle 85px at var(--pointer-x, -999px) var(--pointer-y, -999px), rgba(200, 162, 74, 0.16), transparent 75%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1;
+}
+
+.card:hover::after,
+.pcard:hover::after,
+a.card:hover::after,
+.side .side-btn:hover::after,
+.today .tile:hover::after {
+  opacity: 1;
+}
+
+/* 3. Subtler, Smaller Lift on Cards */
+.card:hover,
+.pcard:hover,
+a.card:hover {
+  transform: translateY(-2.5px) scale(1.008) !important;
+  border-color: #f0d58a !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35), 0 0 14px rgba(200, 162, 74, 0.2) !important;
+}
+
+.card .big,
+.pcard .big,
+a.card .big {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease !important;
+}
+
+.card:hover .big,
+.pcard:hover .big,
+a.card:hover .big {
+  transform: scale(1.06) !important;
+  filter: drop-shadow(0 3px 8px rgba(200, 162, 74, 0.4)) !important;
+}
+
+.card:hover .big .svg-icon,
+.pcard:hover .big .svg-icon {
+  color: #f0d58a !important;
+}
+
+.card:hover h2, .pcard:hover h2, a.card:hover h2 {
+  color: var(--gold2, #f0d58a) !important;
+  transition: color 0.2s ease;
+}
+
+/* 4. Subtler, Smaller Lift on Sidebar Buttons */
+.side .side-btn:hover {
+  transform: translateY(-1px) scale(1.01) !important;
+  background: linear-gradient(135deg, rgba(200, 162, 74, 0.22), rgba(200, 162, 74, 0.08)) !important;
+  border-color: #f0d58a !important;
+  box-shadow: 0 4px 14px rgba(200, 162, 74, 0.25) !important;
+}
+
+.side .side-btn .bi {
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease !important;
+}
+
+.side .side-btn:hover .bi {
+  transform: scale(1.08) !important;
+  color: #f0d58a !important;
+}
+
+.side .side-btn .bt {
+  transition: color 0.2s ease, text-shadow 0.2s ease !important;
+}
+
+.side .side-btn:hover .bt {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(240, 213, 138, 0.35);
+}
+
+/* 5. General Buttons (.btn) Subtle Hover */
+.btn:hover {
+  transform: translateY(-1.5px) scale(1.01) !important;
+  box-shadow: 0 6px 18px rgba(200, 162, 74, 0.32) !important;
+  border-color: #f0d58a !important;
+}
+
+/* 6. Tactile Active Click */
+.card:active,
+.pcard:active,
+a.card:active,
+.side .side-btn:active,
+.btn:active {
+  transform: scale(0.98) !important;
+  transition: transform 0.06s ease !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* 7. Today Prayer Tiles Hover */
+.today .tile {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+}
+
+.today .tile:hover {
+  transform: translateY(-2px) !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3), 0 0 12px rgba(200, 162, 74, 0.2) !important;
 }
 
 /* ==========================================================================
@@ -398,192 +621,4 @@ html[dir="ltr"] .bnav {
     right: 0 !important;
     left: 0 !important;
   }
-}
-
-
-/* ==========================================================================
-   DYNAMIC POINTER HOVER ENGINE & INTERACTIVE MICRO-INTERACTIONS
-   ========================================================================== */
-
-/* 1. Ambient Pointer Glow Aura */
-.pointer-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 380px;
-  height: 380px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  opacity: 0;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(200, 162, 74, 0.16) 0%, rgba(200, 162, 74, 0.05) 45%, transparent 70%);
-  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
-  mix-blend-mode: screen;
-}
-
-body.has-pointer .pointer-glow {
-  opacity: 1;
-}
-
-body.pointer-hovering .pointer-glow {
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(200, 162, 74, 0.24) 0%, rgba(200, 162, 74, 0.08) 50%, transparent 72%);
-}
-
-@media (hover: none) or (pointer: coarse) {
-  .pointer-glow {
-    display: none !important;
-  }
-}
-
-/* 2. Interactive Spotlight inside Cards & Buttons */
-.card,
-.pcard,
-a.card,
-.side .side-btn,
-.btn,
-.today .tile,
-.hero {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
-              box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
-              border-color 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
-              background 0.28s ease !important;
-}
-
-/* Pointer spotlight overlay */
-.card::after,
-.pcard::after,
-a.card::after,
-.side .side-btn::after,
-.today .tile::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(circle 220px at var(--pointer-x, -999px) var(--pointer-y, -999px), rgba(200, 162, 74, 0.24), transparent 75%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1;
-}
-
-.card:hover::after,
-.pcard:hover::after,
-a.card:hover::after,
-.side .side-btn:hover::after,
-.today .tile:hover::after {
-  opacity: 1;
-}
-
-/* 3. Cards Interactive 3D Lift & Golden Radiance */
-.card:hover,
-.pcard:hover,
-a.card:hover {
-  transform: translateY(-6px) scale(1.018) !important;
-  border-color: #f0d58a !important;
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45), 0 0 25px rgba(200, 162, 74, 0.3) !important;
-}
-
-/* Icon Micro-Interaction inside Cards */
-.card .big,
-.pcard .big,
-a.card .big {
-  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease !important;
-}
-
-.card:hover .big,
-.pcard:hover .big,
-a.card:hover .big {
-  transform: scale(1.15) translateY(-3px) !important;
-  filter: drop-shadow(0 6px 14px rgba(200, 162, 74, 0.5)) !important;
-}
-
-.card:hover .big .svg-icon,
-.pcard:hover .big .svg-icon {
-  color: #f0d58a !important;
-}
-
-/* Card Heading Illumination */
-.card:hover h1, .card:hover h2, .card:hover h3,
-.pcard:hover h1, .pcard:hover h2, .pcard:hover h3,
-a.card:hover h1, a.card:hover h2, a.card:hover h3 {
-  color: var(--gold2, #f0d58a) !important;
-  transition: color 0.25s ease;
-}
-
-/* 4. Sidebar Buttons Interactive Hover */
-.side .side-btn {
-  position: relative;
-  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
-              background 0.22s ease,
-              box-shadow 0.22s ease,
-              border-color 0.22s ease !important;
-}
-
-.side .side-btn:hover {
-  transform: translateY(-2px) scale(1.025) !important;
-  background: linear-gradient(135deg, rgba(200, 162, 74, 0.26), rgba(200, 162, 74, 0.1)) !important;
-  border-color: #f0d58a !important;
-  box-shadow: 0 6px 20px rgba(200, 162, 74, 0.35) !important;
-}
-
-.side .side-btn .bi {
-  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease !important;
-}
-
-.side .side-btn:hover .bi {
-  transform: scale(1.22) !important;
-  color: #f0d58a !important;
-}
-
-.side .side-btn .bt {
-  transition: color 0.2s ease, text-shadow 0.2s ease !important;
-}
-
-.side .side-btn:hover .bt {
-  color: #ffffff !important;
-  text-shadow: 0 0 12px rgba(240, 213, 138, 0.45);
-}
-
-/* 5. General Buttons (.btn) Interactive Hover */
-.btn {
-  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
-              box-shadow 0.22s ease,
-              background 0.22s ease,
-              border-color 0.22s ease !important;
-}
-
-.btn:hover {
-  transform: translateY(-3px) scale(1.02) !important;
-  box-shadow: 0 8px 24px rgba(200, 162, 74, 0.42) !important;
-  border-color: #f0d58a !important;
-}
-
-/* 6. Tactile Active State for Physical Feel */
-.card:active,
-.pcard:active,
-a.card:active,
-.side .side-btn:active,
-.btn:active {
-  transform: scale(0.97) !important;
-  transition: transform 0.08s ease !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* 7. Today Prayer Tiles Hover */
-.today .tile {
-  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
-              box-shadow 0.25s ease,
-              border-color 0.25s ease !important;
-}
-
-.today .tile:hover {
-  transform: translateY(-4px) !important;
-  border-color: var(--gold) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(200, 162, 74, 0.25) !important;
 }
