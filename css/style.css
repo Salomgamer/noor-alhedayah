@@ -113,7 +113,12 @@
    Dual-Language Bidirectional Layout (Arabic RTL & English LTR)
    ========================================================================== */
 
-/* 1. Desktop Sidebar: Hard-locked to the RIGHT side on desktop */
+/* 1. Desktop: Sidebar starts COLLAPSED (64px) and OPENS ON HOVER (236px) */
+.shell,
+.shell.col {
+  --sbw: 64px !important;
+}
+
 html body .side,
 html[dir="rtl"] body .side,
 html[dir="ltr"] body .side,
@@ -126,23 +131,26 @@ aside.side {
   left: auto !important;
   border-left: 3px solid var(--gold) !important;
   border-right: none !important;
-  width: var(--sbw) !important;
+  width: 64px !important;
   background: var(--em2) !important;
   z-index: 40 !important;
   transform: none !important;
+  overflow-x: hidden !important;
+  transition: width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s ease !important;
 }
 
-/* 2. Main Page Desktop Margins: Clears right sidebar */
+/* 2. Main Page Desktop Margins: Compact 64px margin so content has maximum space */
 html body .pg,
 html[dir="rtl"] body .pg,
 html[dir="ltr"] body .pg,
 .pg {
-  margin-right: var(--sbw) !important;
+  margin-right: 64px !important;
   margin-left: 0 !important;
-  transition: margin .25s ease !important;
+  transition: margin-right 0.25s ease !important;
 }
 
-/* 3. Docked Floating Bars */
+/* 3. Docked Floating Bars: 64px right clearance */
 html body .dock,
 html[dir="rtl"] body .dock,
 html[dir="ltr"] body .dock,
@@ -151,8 +159,19 @@ html body .abar,
 html[dir="rtl"] body .abar,
 html[dir="ltr"] body .abar,
 .abar {
-  right: var(--sbw) !important;
+  right: 64px !important;
   left: 0 !important;
+  transition: right 0.25s ease !important;
+}
+
+/* 4. OPEN ON HOVER: Opens smoothly to full 236px on pointer hover */
+html body .side:hover,
+aside.side:hover,
+html body .side.expanded,
+aside.side.expanded {
+  width: 236px !important;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.55), 0 0 20px rgba(200, 162, 74, 0.2) !important;
+  z-index: 1000 !important;
 }
 
 /* ==========================================================================
@@ -171,6 +190,8 @@ html[dir="ltr"] .side .side-btn {
   padding: 5px 10px !important;
   font-size: 0.88rem !important;
   gap: 7px !important;
+  width: calc(100% - 14px) !important;
+  margin: 2px 7px !important;
 }
 
 .side .side-btn .bi,
@@ -187,6 +208,7 @@ html[dir="rtl"] .side .side-btn .bt,
 html[dir="ltr"] .side .side-btn .bt {
   display: inline-block !important;
   text-align: center !important;
+  white-space: nowrap !important;
 }
 
 .side .logo2,
@@ -199,6 +221,7 @@ html[dir="ltr"] .side .logo2 {
   font-size: 1.1rem !important;
   gap: 7px !important;
   padding: 8px 12px !important;
+  white-space: nowrap !important;
 }
 
 .side .fold,
@@ -210,6 +233,7 @@ html[dir="ltr"] .side .fold {
   text-align: center !important;
   min-height: 32px !important;
   font-size: 0.84rem !important;
+  white-space: nowrap !important;
 }
 
 .side .sep,

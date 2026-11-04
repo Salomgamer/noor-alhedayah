@@ -18,13 +18,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=16" />
+  <link rel="stylesheet" href="css/style.css?v=17" />
   
   <!-- Application Script -->
-  <script defer src="js/app.js?v=16"></script>
+  <script defer src="js/app.js?v=17"></script>
   <!-- Critical Override: Force Nav Bar to RIGHT side and automatically wipe stale cache -->
   <style>
-    /* Fixed right-side sidebar on desktop across all languages */
+    /* Desktop: Sidebar starts COLLAPSED (64px) and OPENS ON HOVER (236px) */
     html body .side,
     aside.side {
       position: fixed !important;
@@ -35,18 +35,34 @@
       left: auto !important;
       border-left: 3px solid #c8a24a !important;
       border-right: none !important;
-      z-index: 9999 !important;
+      width: 64px !important;
+      background: var(--em2) !important;
+      z-index: 40 !important;
       transform: none !important;
+      overflow-x: hidden !important;
+      transition: width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  box-shadow 0.25s ease !important;
     }
     html body .pg {
-      margin-right: var(--sbw, 236px) !important;
+      margin-right: 64px !important;
       margin-left: 0 !important;
-      transition: margin .25s ease !important;
+      transition: margin-right 0.25s ease !important;
     }
     html body .dock,
     html body .abar {
-      right: var(--sbw, 236px) !important;
+      right: 64px !important;
       left: 0 !important;
+      transition: right 0.25s ease !important;
+    }
+
+    /* Open on hover / expanded */
+    html body .side:hover,
+    aside.side:hover,
+    html body .side.expanded,
+    aside.side.expanded {
+      width: 236px !important;
+      box-shadow: -8px 0 32px rgba(0, 0, 0, 0.55), 0 0 20px rgba(200, 162, 74, 0.2) !important;
+      z-index: 1000 !important;
     }
 
     /* REFINED COMPACT & MIDDLE-LOCKED SIZING */
@@ -60,6 +76,8 @@
       padding: 5px 10px !important;
       font-size: 0.88rem !important;
       gap: 7px !important;
+      width: calc(100% - 14px) !important;
+      margin: 2px 7px !important;
     }
     .side .side-btn .bi {
       display: inline-flex !important;
@@ -70,6 +88,7 @@
     .side .side-btn .bt {
       display: inline-block !important;
       text-align: center !important;
+      white-space: nowrap !important;
     }
     .side .logo2,
     .side .fold,
@@ -78,6 +97,7 @@
       align-items: center !important;
       justify-content: center !important;
       text-align: center !important;
+      white-space: nowrap !important;
     }
     main h1, main h2, main h3, main h4,
     .pg h1, .pg h2, .pg h3, .pg h4 {
@@ -112,7 +132,8 @@
   </style>
   <script>
     (function() {
-      var CURRENT_VER = '16.0';
+      var CURRENT_VER = '17.0';
+      localStorage.setItem('sb', 'true');
       var lastVer = localStorage.getItem('app_applied_ver');
       if (lastVer !== CURRENT_VER) {
         localStorage.setItem('app_applied_ver', CURRENT_VER);
