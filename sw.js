@@ -1,5 +1,5 @@
-// Service Worker for Noor Al-Hidayah (نور الهداية) PWA - v2
-const CACHE_NAME = 'noor-alhidayah-v2';
+// Service Worker for Noor Al-Hidayah (نور الهداية) PWA - v3
+const CACHE_NAME = 'noor-alhidayah-v3';
 
 const CORE_ASSETS = [
   './',

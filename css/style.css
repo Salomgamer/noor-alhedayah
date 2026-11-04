@@ -107,3 +107,64 @@
 .qibla-status-pill.aligned{background:rgba(74,222,128,0.18)!important;border-color:#4ade80!important;color:#15803d!important;box-shadow:0 0 16px rgba(74,222,128,0.35)!important;font-weight:700}
 [data-theme=dark] .qibla-status-pill.aligned{background:rgba(74,222,128,0.22)!important;color:#86efac!important}
 .qibla-slider-wrap{max-width:340px;margin:12px auto;padding:12px 16px;background:var(--card);border-radius:12px;border:1px solid var(--bd);box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+
+
+/* ==========================================================================
+   Fixed Sidebar / Side Control Tab (Prevent Changing Sides)
+   ========================================================================== */
+.side {
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  inset-inline-start: unset !important;
+  inset-inline-end: 0 !important;
+  border-left: 3px solid var(--gold) !important;
+  border-right: none !important;
+  border-inline-end: none !important;
+  border-inline-start: 3px solid var(--gold) !important;
+  direction: rtl !important;
+}
+
+.pg {
+  margin-right: var(--sbw) !important;
+  margin-left: 0 !important;
+  margin-inline-start: unset !important;
+  margin-inline-end: unset !important;
+}
+
+.dock {
+  right: var(--sbw) !important;
+  left: 0 !important;
+  inset-inline-start: unset !important;
+  inset-inline-end: unset !important;
+}
+
+.side .side-btn {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+.side .side-btn.active:before {
+  right: -1px !important;
+  left: auto !important;
+  inset-inline-start: unset !important;
+}
+
+@media (max-width: 899px) {
+  .shell, .shell.col {
+    --sbw: 0px !important;
+  }
+  .side {
+    display: none !important;
+  }
+  .pg {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .dock {
+    right: 0 !important;
+    left: 0 !important;
+  }
+}
