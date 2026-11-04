@@ -18,10 +18,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=13" />
+  <link rel="stylesheet" href="css/style.css?v=14" />
   
   <!-- Application Script -->
-  <script defer src="js/app.js?v=13"></script>
+  <script defer src="js/app.js?v=14"></script>
   <!-- Critical Override: Force Nav Bar to RIGHT side and automatically wipe stale cache -->
   <style>
     /* Fixed right-side sidebar on desktop across all languages */
@@ -48,51 +48,48 @@
       right: var(--sbw, 236px) !important;
       left: 0 !important;
     }
-    /* Arabic RTL Orientation */
-    html[dir="rtl"] body .side,
-    html[dir="rtl"] aside.side {
-      direction: rtl !important;
-      text-align: right !important;
+
+    /* MIDDLE LOCK: Centered fonts across buttons, headers, and cards */
+    .side .side-btn,
+    html body .side .side-btn {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      gap: 8px !important;
     }
-    html[dir="rtl"] .side .logo2 {
-      direction: rtl !important;
-      text-align: right !important;
+    .side .side-btn .bi {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
-    html[dir="rtl"] .side .side-btn {
-      direction: rtl !important;
-      text-align: right !important;
-      justify-content: flex-start !important;
+    .side .side-btn .bt {
+      display: inline-block !important;
+      text-align: center !important;
     }
-    html[dir="rtl"] body .pg {
-      direction: rtl !important;
-      text-align: right !important;
+    .side .logo2,
+    .side .fold,
+    .side .sep {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
     }
-    /* English LTR Orientation */
-    html[dir="ltr"] body .side,
-    html[dir="ltr"] aside.side {
-      direction: ltr !important;
-      text-align: left !important;
+    main h1, main h2, main h3, main h4,
+    .pg h1, .pg h2, .pg h3, .pg h4 {
+      text-align: center !important;
     }
-    html[dir="ltr"] .side .logo2 {
-      direction: ltr !important;
-      text-align: left !important;
+    .card, .pcard {
+      text-align: center !important;
     }
-    html[dir="ltr"] .side .side-btn {
-      direction: ltr !important;
-      text-align: left !important;
-      justify-content: flex-start !important;
+    .card h1, .card h2, .card h3, .card h4, .card p,
+    .pcard h1, .pcard h2, .pcard h3, .pcard h4, .pcard p {
+      text-align: center !important;
     }
-    html[dir="ltr"] body .pg {
-      direction: ltr !important;
-      text-align: left !important;
+    .hero, .hero h1, .hero h2, .hero p, .hero .mut {
+      text-align: center !important;
     }
-    html[dir="ltr"] .card,
-    html[dir="ltr"] .pcard,
-    html[dir="ltr"] .hero p,
-    html[dir="ltr"] main h1,
-    html[dir="ltr"] main h2 {
-      text-align: left !important;
-    }
+
     /* Classical Quranic Typography & Centering in both modes */
     .quran, .mushaf, .ayah, .bsm, .dtxt, .hadith, [data-quran] {
       direction: rtl !important;
@@ -100,6 +97,7 @@
       font-family: 'Amiri Quran', 'Scheherazade New', 'Amiri', serif !important;
       line-height: 2.2 !important;
     }
+
     @media (max-width: 899px) {
       html body .side, aside.side { display: none !important; }
       html body .pg { margin-right: 0 !important; margin-left: 0 !important; }
@@ -108,7 +106,7 @@
   </style>
   <script>
     (function() {
-      var CURRENT_VER = '13.0';
+      var CURRENT_VER = '14.0';
       var lastVer = localStorage.getItem('app_applied_ver');
       if (lastVer !== CURRENT_VER) {
         localStorage.setItem('app_applied_ver', CURRENT_VER);

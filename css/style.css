@@ -156,12 +156,104 @@ html[dir="ltr"] body .abar,
 }
 
 /* ==========================================================================
+   MIDDLE LOCK (Centered Fonts & Content Across Arabic & English)
+   ========================================================================== */
+
+/* Sidebar Buttons & Items: Middle-Locked (Centered) */
+.side .side-btn,
+html[dir="rtl"] .side .side-btn,
+html[dir="ltr"] .side .side-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 8px !important;
+}
+
+.side .side-btn .bi,
+html[dir="rtl"] .side .side-btn .bi,
+html[dir="ltr"] .side .side-btn .bi {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.side .side-btn .bt,
+html[dir="rtl"] .side .side-btn .bt,
+html[dir="ltr"] .side .side-btn .bt {
+  display: inline-block !important;
+  text-align: center !important;
+}
+
+/* Sidebar Logo & Controls: Middle-Locked (Centered) */
+.side .logo2,
+html[dir="rtl"] .side .logo2,
+html[dir="ltr"] .side .logo2 {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 8px !important;
+}
+
+.side .fold,
+html[dir="rtl"] .side .fold,
+html[dir="ltr"] .side .fold {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.side .sep,
+html[dir="rtl"] .side .sep,
+html[dir="ltr"] .side .sep {
+  text-align: center !important;
+}
+
+/* Page Headings, Cards & Hero: Middle-Locked (Centered) */
+main h1, main h2, main h3, main h4,
+.pg h1, .pg h2, .pg h3, .pg h4,
+html[dir="rtl"] main h1, html[dir="rtl"] main h2,
+html[dir="ltr"] main h1, html[dir="ltr"] main h2 {
+  text-align: center !important;
+}
+
+.card, .pcard,
+html[dir="rtl"] .card, html[dir="rtl"] .pcard,
+html[dir="ltr"] .card, html[dir="ltr"] .pcard {
+  text-align: center !important;
+}
+
+.card h1, .card h2, .card h3, .card h4, .card p,
+.pcard h1, .pcard h2, .pcard h3, .pcard h4, .pcard p,
+html[dir="rtl"] .card p, html[dir="ltr"] .card p,
+html[dir="rtl"] .card h2, html[dir="ltr"] .card h2,
+html[dir="rtl"] .card h3, html[dir="ltr"] .card h3 {
+  text-align: center !important;
+}
+
+.hero,
+.hero h1,
+.hero h2,
+.hero p,
+.hero .mut,
+html[dir="rtl"] .hero,
+html[dir="rtl"] .hero h1,
+html[dir="rtl"] .hero p,
+html[dir="ltr"] .hero,
+html[dir="ltr"] .hero h1,
+html[dir="ltr"] .hero p {
+  text-align: center !important;
+}
+
+/* ==========================================================================
    ARABIC MODE (dir="rtl")
    ========================================================================== */
 html[dir="rtl"],
 html[lang="ar"] {
   direction: rtl;
-  text-align: right;
   font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
 }
 
@@ -172,24 +264,10 @@ html[dir="rtl"] input,
 html[dir="rtl"] textarea {
   font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
   line-height: 1.95;
-  text-align: right;
-}
-
-/* Arabic Sidebar */
-html[dir="rtl"] .side {
-  direction: rtl !important;
-  text-align: right !important;
-}
-
-html[dir="rtl"] .side .logo2 {
-  direction: rtl !important;
-  text-align: right !important;
 }
 
 html[dir="rtl"] .side .side-btn {
   direction: rtl !important;
-  text-align: right !important;
-  justify-content: flex-start !important;
   font-family: 'Amiri', 'Noto Naskh Arabic', serif !important;
   font-size: 1.05rem !important;
   font-weight: 700 !important;
@@ -198,12 +276,6 @@ html[dir="rtl"] .side .side-btn {
 html[dir="rtl"] .side .side-btn.active:before {
   right: -1px !important;
   left: auto !important;
-}
-
-/* Arabic Page Content */
-html[dir="rtl"] .pg {
-  direction: rtl !important;
-  text-align: right !important;
 }
 
 html[dir="rtl"] h1,
@@ -215,12 +287,6 @@ html[dir="rtl"] .logo2,
 html[dir="rtl"] .hero h1 {
   font-family: 'Amiri', 'Traditional Arabic', serif !important;
   font-weight: 700;
-  text-align: right;
-}
-
-html[dir="rtl"] .card,
-html[dir="rtl"] .hero p {
-  text-align: right;
 }
 
 html[dir="rtl"] .mtop {
@@ -237,7 +303,6 @@ html[dir="rtl"] .bnav {
 html[dir="ltr"],
 html[lang="en"] {
   direction: ltr;
-  text-align: left;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
 }
 
@@ -248,24 +313,10 @@ html[dir="ltr"] input,
 html[dir="ltr"] textarea {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   line-height: 1.6;
-  text-align: left;
-}
-
-/* English Sidebar (Permanently on the Right edge, but internal flow is LTR) */
-html[dir="ltr"] .side {
-  direction: ltr !important;
-  text-align: left !important;
-}
-
-html[dir="ltr"] .side .logo2 {
-  direction: ltr !important;
-  text-align: left !important;
 }
 
 html[dir="ltr"] .side .side-btn {
   direction: ltr !important;
-  text-align: left !important;
-  justify-content: flex-start !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 0.95rem !important;
   font-weight: 600 !important;
@@ -274,12 +325,6 @@ html[dir="ltr"] .side .side-btn {
 html[dir="ltr"] .side .side-btn.active:before {
   right: -1px !important;
   left: auto !important;
-}
-
-/* English Page Content */
-html[dir="ltr"] .pg {
-  direction: ltr !important;
-  text-align: left !important;
 }
 
 html[dir="ltr"] h1,
@@ -291,13 +336,6 @@ html[dir="ltr"] .logo2,
 html[dir="ltr"] .hero h1 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   font-weight: 700;
-  text-align: left;
-}
-
-html[dir="ltr"] .card,
-html[dir="ltr"] .hero p,
-html[dir="ltr"] .hero .mut {
-  text-align: left;
 }
 
 html[dir="ltr"] .mtop {
