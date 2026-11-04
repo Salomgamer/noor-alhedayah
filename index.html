@@ -18,20 +18,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700;800;900&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=10" />
+  <link rel="stylesheet" href="css/style.css?v=11" />
   
   <!-- Application Script -->
-  <script defer src="js/app.js?v=10"></script>
+  <script defer src="js/app.js?v=11"></script>
   <!-- Critical Override: Force Nav Bar to RIGHT side and automatically wipe stale cache -->
   <style>
     html body .side,
     aside.side {
       position: fixed !important;
+      inset: auto !important;
       top: 0 !important;
       bottom: 0 !important;
       right: 0 !important;
       left: auto !important;
-      margin-left: 0 !important;
       border-left: 3px solid #c8a24a !important;
       border-right: none !important;
       direction: rtl !important;
@@ -56,7 +56,7 @@
   </style>
   <script>
     (function() {
-      var CURRENT_VER = '10.1';
+      var CURRENT_VER = '11.0';
       var lastVer = localStorage.getItem('app_applied_ver');
       if (lastVer !== CURRENT_VER) {
         localStorage.setItem('app_applied_ver', CURRENT_VER);
