@@ -196,21 +196,31 @@ body .abar,
 }
 
 /* ==========================================================================
-   Premium Typography & Modern Fonts
+   Authentic Quranic & Islamic Typography (Classical Naskh Calligraphy)
    ========================================================================== */
 body, button, select, input, textarea {
-  font-family: 'Readex Pro', 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-family: 'Amiri', 'Noto Naskh Arabic', 'Traditional Arabic', serif !important;
+  font-size: 1.05rem;
+  line-height: 1.95;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, .logo, .logo2 {
-  font-family: 'Cairo', 'Readex Pro', sans-serif !important;
+h1, h2, h3, h4, .logo, .logo2, .hero h1 {
+  font-family: 'Amiri', 'Traditional Arabic', serif !important;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
-.quran, .mushaf, .ayah, .bsm {
-  font-family: var(--qf, 'Amiri Quran'), 'Amiri', 'Traditional Arabic', serif !important;
+/* Quranic Verses, Surahs, Mushaf & Basmalah */
+.quran, .mushaf, .ayah, .bsm, .dtxt, .hadith {
+  font-family: 'Amiri Quran', 'Amiri', 'Traditional Arabic', 'Scheherazade New', serif !important;
   font-feature-settings: "cv01" on, "cv02" on;
+  line-height: 2.2 !important;
+}
+
+.side-btn {
+  font-family: 'Amiri', 'Noto Naskh Arabic', serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
 }

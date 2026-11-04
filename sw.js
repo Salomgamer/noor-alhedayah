@@ -1,11 +1,11 @@
 // Service Worker for Noor Al-Hidayah (نور الهداية) PWA - v9
-const CACHE_NAME = 'noor-alhidayah-v11';
+const CACHE_NAME = 'noor-alhidayah-v12';
 
 const CORE_ASSETS = [
   './',
   './index.html',
-  './css/style.css?v=11',
-  './js/app.js?v=11',
+  './css/style.css?v=12',
+  './js/app.js?v=12',
   './manifest.webmanifest',
   './favicon.svg'
 ];
