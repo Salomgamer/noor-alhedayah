@@ -687,36 +687,46 @@ a.card:active,
 }
 
 /* ==========================================================================
-   COMPACT LANGUAGE CHANGER BUTTON
+   LANGUAGE CHANGER ICON BUTTON
    ========================================================================== */
-.langbtn,
-.btn.langbtn,
-.side .langbtn,
-.mtop .langbtn {
-  font-size: 0.74rem !important;
-  min-height: 24px !important;
-  height: 24px !important;
-  padding: 2px 8px !important;
-  line-height: 1 !important;
-  border-radius: 6px !important;
+.btn.icon.langbtn,
+.btn.sm.icon.langbtn,
+.langbtn {
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  padding: 0 !important;
+  border-radius: 10px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 4px !important;
-  white-space: nowrap !important;
   cursor: pointer !important;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+  background: var(--card) !important;
+  border: 1.5px solid var(--gold) !important;
+  color: var(--gold) !important;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease !important;
+}
+
+.btn.icon.langbtn:hover,
+.langbtn:hover {
+  transform: translateY(-2px) scale(1.06) !important;
+  border-color: #f0d58a !important;
+  background: rgba(200, 162, 74, 0.2) !important;
+  box-shadow: 0 4px 14px rgba(200, 162, 74, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.btn.icon.langbtn svg,
+.langbtn svg {
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+  margin: auto !important;
+  fill: currentColor !important;
 }
 
 .side .langbtn {
-  margin: 0 auto !important;
-  font-size: 0.72rem !important;
-  padding: 2px 6px !important;
-  max-width: 100% !important;
-}
-
-.langbtn:hover {
-  transform: translateY(-1px) scale(1.02) !important;
-  border-color: #f0d58a !important;
-  box-shadow: 0 4px 10px rgba(200, 162, 74, 0.25) !important;
+  margin: 4px auto !important;
+  display: flex !important;
 }
