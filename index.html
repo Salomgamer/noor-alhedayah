@@ -18,10 +18,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
   
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=20" />
+  <link rel="stylesheet" href="css/style.css?v=21" />
   
   <!-- Application Script -->
-  <script defer src="js/app.js?v=20"></script>
+  <script defer src="js/app.js?v=21"></script>
   <!-- Critical Override: Force Nav Bar to RIGHT side and automatically wipe stale cache -->
   <style>
     /* Desktop: Sidebar starts COLLAPSED (64px) and OPENS ON HOVER (236px) */
@@ -161,26 +161,30 @@
   </style>
   <script>
     (function() {
-      var CURRENT_VER = '20.0';
-      localStorage.setItem('sb', 'true');
-      var lastVer = localStorage.getItem('app_applied_ver');
-      if (lastVer !== CURRENT_VER) {
-        localStorage.setItem('app_applied_ver', CURRENT_VER);
-        if (typeof caches !== 'undefined') {
-          caches.keys().then(function(names) {
-            return Promise.all(names.map(function(n) { return caches.delete(n); }));
-          }).then(function() {
-            if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.getRegistrations().then(function(regs) {
-                return Promise.all(regs.map(function(r) { return r.unregister(); }));
-              }).then(function() {
-                window.location.reload();
-              });
-            } else {
-              window.location.reload();
-            }
-          });
+      var CURRENT_VER = '21.0';
+      try {
+        localStorage.setItem('sb', 'true');
+        var lastVer = localStorage.getItem('app_applied_ver');
+        if (!lastVer) {
+          // First visit: Just register version, never reload!
+          localStorage.setItem('app_applied_ver', CURRENT_VER);
+        } else if (lastVer !== CURRENT_VER) {
+          // Returning user from older build: wipe stale cache
+          localStorage.setItem('app_applied_ver', CURRENT_VER);
+          if (typeof caches !== 'undefined') {
+            caches.keys().then(function(names) {
+              return Promise.all(names.map(function(n) { return caches.delete(n); }));
+            }).then(function() {
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(regs) {
+                  return Promise.all(regs.map(function(r) { return r.unregister(); }));
+                });
+              }
+            });
+          }
         }
+      } catch (e) {
+        console.warn('Storage unavailable in current context:', e);
       }
     })();
   </script>
